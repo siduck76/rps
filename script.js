@@ -1,44 +1,74 @@
-// array for rock paper and scissors 
-var rpsArr = ["paper","rock","scis"];
+let counter = 0;
+let user, pc;
 
-// func to return random elements from rps array 
-function computerPlay(){
-return  rpsArr[Math.floor(Math.random() * 3 )];
-}
+// scores
+let userScore = 0,
+  pcScore = 0;
 
-// counter for the scores 
-let userScore = 0 , pcScore = 0 ;
-
-//take input  and calculate the scores 
-function playRound(){
-         let user = prompt( " enter any of rps  "); 
-             user = user.toLowerCase();
-     let pc = computerPlay() ; 
-         pc = pc.toLowerCase(); 
-
-  if(user == "rock" && pc == "scis") { alert("you won! , rock beats scis");  userScore++; }
-  else if(user == "rock" && pc == "paper"){alert("you lost! , paper beats rock");  pcScore++; }
-  else if(user == "scis" && pc == "paper"){alert("you won! , scis beats paper"); userScore++; }
-  else if(user == "scis" && pc == "rock"){alert("you lost! , rock beats scis");  pcScore++; }
-  else if(user == "paper" && pc == "scis"){alert("you lost! , scis beats paper");  pcScore++; }
-  else if(user == "paper" && pc == "rock"){ alert("you won! ,  paper beats rock"); userScore++; }
-
-} 
-
-// print results 
-function result() {
-alert("so the results are  " + "user : " + userScore + " pc :" + pcScore ); 
-(pcScore > userScore)?alert("sorry u lose :v") : alert("you won!");
-}
- 
-
-// loop to play 5 rounds 
-function game(){
-  for(let i = 0 ; i < 5 ; i++) {
-     
-    playRound();
+// play game 
+function playRound() {
+  pc = computerPlay();
+  if(user == pc) {
+    userScore++;
+    pcScore++;
+  } else if(user == "rock" && pc == "scis") {
+    userScore++;
+  } else if(user == "rock" && pc == "paper") {
+    pcScore++;
+  } else if(user == "scis" && pc == "paper") {
+    userScore++;
+  } else if(user == "scis" && pc == "rock") {
+    pcScore++;
+  } else if(user == "paper" && pc == "scis") {
+    pcScore++;
+  } else if(user == "paper" && pc == "rock") {
+    userScore++;
   }
-   result();
 }
 
-game();
+
+const items = document.querySelectorAll('.item');
+items.forEach((item) => {
+  item.addEventListener('click', () => {
+    counter++;
+    user = item.id;
+    playRound();
+    computerPlay();
+    liveScores();
+    if(counter == 3) {
+      result();
+      counter = 0;
+      pcScore = 0;
+      userScore = 0;
+      liveScores();
+    }
+  });
+});
+
+// array for rock paper and scissors
+var rpsArr = ["paper", "rock", "scis"];
+
+
+function computerPlay() {
+  return rpsArr[Math.floor(Math.random() * 3)];
+}
+
+// result 
+
+function result() {
+  alert("so the results are  " + "user : " + userScore + " pc :" + pcScore);
+  if(pcScore == userScore) alert("its a draw");
+  else {
+    pcScore > userScore ? alert("sorry u lose :v") : alert("you won!");
+  }
+}
+
+// selects divs for live score
+const userbruh = document.querySelector('.bruhUser');
+const pcbruh = document.querySelector('.bruhbot');
+
+// show scores live 
+function liveScores() {
+  userbruh.textContent = userScore;
+  pcbruh.textContent = pcScore;
+}

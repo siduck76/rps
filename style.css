@@ -1,0 +1,58 @@
+body {
+	background-color: lavenderblush;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.item {
+	background-color: white;
+	margin: 3%;
+	padding: 8%;
+	width: 100%;
+	text-align: center;
+	box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
+	font-weight: bold;
+	font-size: 1vw;
+	border-width: 0px;
+
+}
+
+button:focus {
+	  border: 2px double pink;
+	outline: none;
+	transform: scale(1.1);
+
+}
+
+
+h2 {
+	text-align:  center;
+}
+
+.content {
+	margin: 2% 12% 2% 12%;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.bruh {
+	margin: 7%;
+}
+
+.result {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin: 5% 40% 5% 40%;
+	border-style: solid;
+	border-width: 2px;
+	 
+	text-align: center;
+}
+
+#scores {
+	background-color: white;
+}
+
+.imgs {
+	padding: 5%;
+	width: 100%;
+}
