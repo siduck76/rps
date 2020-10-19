@@ -1,3 +1,3 @@
 # rps
 
-<a href ="https://codepen.io/siduck765/full/VwjYJRy" > demo</a>
+<a href ="https://siduck76.github.io/rps/" > demo</a>
