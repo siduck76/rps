@@ -83,7 +83,7 @@ function playAgain() {
 
 function changeTheme() {
 
-    if (themeLight == true) {
+    if (themeLight) {
 
         document.body.style.backgroundColor = "#181818";
         document.querySelector(".heading").style.cssText = ' background-color: #181818; color : white;';

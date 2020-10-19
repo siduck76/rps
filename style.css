@@ -147,3 +147,40 @@ input:checked + .slider:before {
 .item:hover {
 	transform: scale(1.1);
 }
+
+
+@media (max-width: 1024px){
+
+.item {
+	  grid-area: myArea;
+
+}
+.content {
+	  grid-template-areas: 'myArea myArea myArea myArea myArea';
+	  margin: auto;
+}
+ 
+.item {
+ 
+	margin: 0%;
+	padding: 8%;
+	width: 100%;
+	font-size: 1vw;
+	border-width: 0px;
+
+}
+
+.result {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin: 5% 2% 0% 2%;
+	 
+}
+
+
+.winner {
+	margin: 0% 2% 0% 2%; 
+	padding: 1%;
+}
+
+}
