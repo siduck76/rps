@@ -78,7 +78,9 @@ function playAgain() {
     pcScore = 0;
     userScore = 0;
     counter = 0;
+    resultsbruh.textContent = "results";
     liveScores();
+
 }
 
 function changeTheme() {
